@@ -1,0 +1,25 @@
+{
+  "name": "psr-report-taskdetail",
+  "scripts": {
+    "jenkinsJS": "node test/jenkins.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hotschedules/psr-report-taskdetail.git"
+  },
+  "homepage": "https://github.com/hotschedules/psr-report-taskdetail#readme",
+  "description": "* This repo contains all of the files and information necessary to run the tasklist detail report test.",
+  "bugs": {
+    "url": "https://github.com/hotschedules/psr-report-taskdetail/issues"
+  },
+  "author": "Jehan Coetzee",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "superagent": "^3.6.3"
+  }
+}

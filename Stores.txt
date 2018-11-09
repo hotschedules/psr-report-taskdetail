@@ -1,6 +1,0 @@
-store_test_06,catalyst-inv-report-uvr--registry-html,
-store_test_06,iw-tasklist-detail-report-registry,
-store_test_04,catalyst-inv-report-uvr--registry-html,
-store_test_04,iw-tasklist-detail-report-registry,
-store_test_08,catalyst-inv-report-uvr--registry-html,
-store_test_08,iw-tasklist-detail-report-registry,

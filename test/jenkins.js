@@ -1,6 +1,18 @@
+
 /**
- * Created by walkermellema on 10/6/17.
+ * Created by walkermellema on 11/13/17.
  */
+/**
+ * Created by walkermellema on 11/9/17.
+ */
+var floodLogin = 'https://flood.io/app/p';
+
+var floodUser = process.env.FLOODUSER;
+var floodPass = process.env.FLOODPASS;
+
+var bearerToken;
+var submitURL;
+
 var client = require('superagent');
 var url = 'https://api.flood.io';
 var patchURL = 'https://flood.io/api/v3/floods/';
@@ -12,18 +24,48 @@ var floodJSON = JSON.parse(contents);
 var floodUUID = floodJSON.uuid;
 var permalink = floodJSON.permalink;
 
-//curl -X PATCH "https://flood.io/api/v3/floods/LBMiCAUNB13jNhWBApoJfg/set-public" -H "Accept:application/vnd.api+json" -H "Authorization:Bearer af17289d712a7cb6fb31194370a8325399513f1afa3b6abddf73f36a600d30db"
-
-
-client.patch(patchURL + floodUUID + '/set-public')
-	.set('Accept', 'application/vnd.api+json')
-	.set('Authorization', 'Bearer af17289d712a7cb6fb31194370a8325399513f1afa3b6abddf73f36a600d30db')
-	.end(function(err, res){
+var agent = client.agent();
+agent.get(floodLogin)
+	.end(function (err, res) {
 		if(err){
 			console.log(err);
 		}
 		else{
-			console.log('***Permalink Enabled***');
+			submitURL = 'https://flood.io/oauth/token';
+			agent.post(submitURL)
+				.type('form')
+				.send({'username': floodUser})
+				.send({'password': floodPass})
+				.send({'grant_type': 'password'})
+				.set({'Accept': '*/*'})
+				.set({'Accept-Encoding': 'gzip, deflate, br'})
+				.set({'Accept-Language': 'en-US,en;q=0.8'})
+				.set({'Connection': 'keep-alive'})
+				.set({'content-type': 'application/x-www-form-urlencoded'})
+				.set({'Host': 'flood.io'})
+				.set({'Origin': 'https://flood.io'})
+				.set({'Referer': 'https://flood.io/app/login'})
+				.set('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')
+				.end(function (err, res) {
+					if(err){
+						console.log(err);
+					}
+					else{
+						bearerToken = res.body.access_token;
+						client.patch(patchURL + floodUUID + '/set-public')
+							.set('Accept', 'application/vnd.api+json')
+							.set('Authorization', 'Bearer ' + bearerToken)
+							.end(function(err, res){
+								if(err){
+									console.log(err);
+								}
+								else{
+									console.log('***Permalink Enabled***');
+								}
+							});
+					}
+
+				});
 		}
 	});
 
@@ -69,15 +111,13 @@ var checkUUID = function(){
 								}
 							});
 					}
-				}
-				if (res.body.status === 'stopped') {
+					if (res.body.status === 'stopped') {
 						clearInterval(interval);
-            console.log('PSR test stopped prematurely.')
+						console.log('PSR test stopped prematurely.')
+					}
 				}
 			}
 		});
 };
 
 var interval = setInterval(checkUUID, 60000);
-
-

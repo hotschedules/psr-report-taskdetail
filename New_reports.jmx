@@ -453,20 +453,20 @@ for(int i = 1; i &lt;= count; i++)
 	 // tempReg = vars.get(&quot;regName_${j}&quot;);	
 	 // FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${tempStore},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
 
-	 tempReg = &quot;catalyst-inv-report-count-to-count-variance--registry-html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
+	 tempReg = &quot;iw-tasklist-detail-report-registry.html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
 	 FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${namespace},${tempStore},${tempNumber},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
 
-	 tempReg = &quot;catalyst-inv-report-on-hand-extension--registry-html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
-	 FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${namespace},${tempStore},${tempNumber},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
+	// tempReg = &quot;catalyst-inv-report-on-hand-extension--registry-html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
+	// FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${namespace},${tempStore},${tempNumber},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
 
-	 tempReg = &quot;cash-report-daily-financial-gl-export--registry-html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
-	 FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${namespace},${tempStore},${tempNumber},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
+//	 tempReg = &quot;cash-report-daily-financial-gl-export--registry-html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
+//	 FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${namespace},${tempStore},${tempNumber},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
 
- 	 tempReg = &quot;catalyst-inv-report-product-mix--registry-html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
-	 FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${namespace},${tempStore},${tempNumber},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
+// 	 tempReg = &quot;catalyst-inv-report-product-mix--registry-html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
+//	 FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${namespace},${tempStore},${tempNumber},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
 	 
-	 tempReg = &quot;catalyst-inv-report-uvr--registry-html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
-	 FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${namespace},${tempStore},${tempNumber},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
+//	 tempReg = &quot;catalyst-inv-report-uvr--registry-html&quot;;   //vars.get(&quot;regName_${j}&quot;);	
+//	 FileUtils.writeStringToFile(new java.io.File(&quot;/data/flood/files/store.txt&quot;),&quot;${namespace},${tempStore},${tempNumber},${tempReg},\r\n&quot;,&quot;UTF-8&quot;,true);
 	}
 
 

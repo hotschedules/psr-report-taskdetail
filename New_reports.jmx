@@ -3295,7 +3295,7 @@ vars.put(&quot;myDate&quot;,newDate);</stringProp>
                 <hashTree/>
               </hashTree>
             </hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="iw-tasklist-detail-report-registry.html" enabled="true">
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="iw-tasklist-detail-report-registry" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
             </TransactionController>
